@@ -1,5 +1,11 @@
-###### Use the eggNOG5.0 database to identify conserved single-copy genes.
+set -euxo pipefail
 
+# Create folders
+
+mkdir -p final_project && cd final_project
+mkdir -p bin data doc results
+
+###### Use the eggNOG5.0 database to identify conserved single-copy genes.
 
 ### Set variables/file names
 # base directory
@@ -15,14 +21,15 @@ archaea_fct=$DATADIR/2157/2157_annotations.tsv.gz
 
 ### 1. Which genes (OGs) occur in at least 99% of all genomes in the eggNOG5 database in each domain of life, respectively?
 
-zcat $bacteria | ./read_members_file.py -min_occurence 99 > cogs_bacteria_o99.txt
-zcat $archaea | ./read_members_file.py -min_occurence 99 > cogs_archaea_o99.txt
-zcat $eukaryota | ./read_members_file.py -min_occurence 99 > cogs_eukaryota_o99.txt
+pwd
+zcat $bacteria | ./../read_members_file.py -min_occurence 99 > data/cogs_bacteria_o99.txt
+zcat $archaea | ./../read_members_file.py -min_occurence 99 > data/cogs_archaea_o99.txt
+zcat $eukaryota | ./../read_members_file.py -min_occurence 99 > data/cogs_eukaryota_o99.txt
 
 
 ### 2. Which bacterial genes occur in at least 50% of all bacterial genomes, and in at least 99% thereof as single-copy?
 
-zcat $bacteria | ./read_members_file.py -min_occurence 50 -min_uniqueness 99 > cogs_bacteria_o50_u99.txt
+zcat $bacteria | ./read_members_file.py -min_occurence 50 -min_uniqueness 99 > data/cogs_bacteria_o50_u99.txt
 
 # How many of these OGs were also identified as universal bacterial OGs (previous question)?
 comm -12 cogs_bacteria_o99.txt cogs_bacteria_o50_u99.txt
