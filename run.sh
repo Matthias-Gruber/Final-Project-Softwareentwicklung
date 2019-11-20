@@ -47,4 +47,5 @@ zcat $archaea | ./bin/read_members_file.py -min_occurence_as_singlecopy 97 -miss
 
 
 ### 4. Compile an overview of the functional categories of these 121 archaeal OGs
-zcat $archaea_fct | ./bin/annotate_cogs.py results/cogs_archaea_os99.txt
+#zcat $archaea_fct | ./bin/annotate_cogs.py results/cogs_archaea_os99.txt
+./bin/annotate_cogs.py results/cogs_archaea_os99.txt
