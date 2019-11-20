@@ -68,9 +68,15 @@ def calc_stats(taxids, all_taxids):
     - uniqueness → 66% (OG is single-copy in 2 out of 3 taxids)
     - occurence_as_singlecopy → 50% (OG occurs as single-copy in 2 out of 4 taxids)
     '''
-    # Your code here
-    pass
-
+    #TODO
+    len_OG = len(list(set(taxids)))
+    len_taxids = len(taxids)
+    len_all = len(all_taxids)
+    len_unique = len(uniques(taxids))
+    p_OG = 100 * len_OG/len_all
+    p_unique = 100 * len_unique/len_OG
+    p_all = 100 * len_unique/len_all
+    return (p_OG, p_unique, p_all)
 
 def parse_members_file(fin):
     '''e.g. /mirror/eggnog/eggnog_5.0/per_tax_level/1/1_members.tsv.gz
@@ -100,8 +106,8 @@ def parse_members_file(fin):
         
 def missing_taxids(cog, taxids):
     '''Determine which OGs are missing from which taxids'''
-    # Your code here
-    pass
+    #TODO
+    print("Taxids missing.")
 
         
 def output_seqids(filename, cogs):
@@ -142,8 +148,8 @@ def output_cogs():
 
     # Output taxids with missing cogs
     if args.missing:
-        # Your code here
-        pass
+        print("Cogs missing.")
+        # TODO
                     
 
 if __name__ == '__main__':
