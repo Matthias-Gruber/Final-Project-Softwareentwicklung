@@ -4,10 +4,15 @@ set -euxo pipefail
 
 mkdir -p final_project && cd final_project
 mkdir -p bin data doc results
-mv ../annotate_cogs.py bin
-mv ../read_members_file.py bin
-mv ../project_description.pdf doc
-mv ../functional_categories.txt data
+cp ../annotate_cogs.py bin
+cp ../read_members_file.py bin
+cp ../project_description.pdf doc
+cp ../functional_categories.txt data
+cp ../README.md doc
+
+# Permission
+chmod +x bin/annotate_cogs.py
+chmod +x bin/read_members_file.py
 
 ###### Use the eggNOG5.0 database to identify conserved single-copy genes.
 
@@ -36,7 +41,7 @@ zcat $eukaryota | bin/read_members_file.py -min_occurence 99 > results/cogs_euka
 zcat $bacteria | ./bin/read_members_file.py -min_occurence 50 -min_uniqueness 99 > results/cogs_bacteria_o50_u99.txt
 
 # How many of these OGs were also identified as universal bacterial OGs (previous question)?
-comm -12 data/cogs_bacteria_o99.txt results/cogs_bacteria_o50_u99.txt
+comm -12 results/cogs_bacteria_o99.txt results/cogs_bacteria_o50_u99.txt
 
 
 ### 3. Identify all OGs that occur as single-copy in at least 97% of all archaea
