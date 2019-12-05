@@ -40,6 +40,8 @@ genomes, and in at least 99% thereof as single-copy?
 * How many of these OGs were also identified as universal bacterial OGs
 (previous question)? [10 points]
 
+***40***
+
 ***Filename: cogs_universal_bacteria_o50_u99.txt***
 
 3. Identify all OGs that occur as single-copy in at least 97% of all Archaea.
