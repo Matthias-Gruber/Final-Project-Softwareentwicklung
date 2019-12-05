@@ -30,13 +30,26 @@ OGs in sorted order. [15 points]
 2. Which common bacterial genes occur almost exclusively as single-copy
 genes? Being more precise: Which OGs occur in at least 50% of all bacterial
 genomes, and in at least 99% thereof as single-copy?
+
+***73***
+
 * Provide the results as a sorted text file. [15 points]
+
+***Filename: cogs_bacteria_o50_u99.txt***
+
 * How many of these OGs were also identified as universal bacterial OGs
 (previous question)? [10 points]
+
+***Filename: cogs_universal_bacteria_o50_u99.txt***
 
 3. Identify all OGs that occur as single-copy in at least 97% of all Archaea.
 * How many such OGs did you identify? Provide the result as a sorted
 text file. [10 points]
+
+***121***
+
+***Filename: cogs_archaea_os99.txt***
+
 * It would be interesting to know if there are archaeal genomes which
 substantially deviate from this “default” archaeal gene set. Are
 there Archaea which lack 4 or more of these universal OGs? Which
