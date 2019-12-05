@@ -13,6 +13,12 @@ cog2category = {}
 category2count = Counter()
 my_cogs = set()
 
+
+def skip_comments(file):
+    for line in file:
+        if not line.strip().startswith('#'):
+            yield line
+            
 # Step 1: Read description of functional categories
 with open(func_categories_file) as fin:
     for line in fin:
@@ -23,16 +29,15 @@ with open(func_categories_file) as fin:
             category2description[key] = val
 
 # Step 2: Read file with OGs of interest
-with open(cog_file) as fin:
-    for line in skip_comments(fin):
-        print(line)
+#with open(cog_file) as fin:
+ #   for line in skip_comments(fin):
+        #cog2category
 
 # Step 3: Read file with functional annotations
 input = gzip.GzipFile(func_file,'rb')
 i = input.read()
-j = i.decode("utf-8") 
-print(j)
+func_annotations = i.decode("utf-8") 
 input.close()
 
 # Step 4: Count and output the categories for OGs of interest
-# Write file categories.txt
+#with open("categories.txt", 'w') as fout:
