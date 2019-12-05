@@ -1,5 +1,3 @@
-set -euxo pipefail
-
 # Create folders
 
 mkdir -p final_project && cd final_project
