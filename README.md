@@ -15,8 +15,17 @@ more precise: Which genes (OGs) occur in at least 99% of all genomes in
 the eggNOG5 database in each domain of life, respectively? (The results
 should be around 100-300.)
 * How many such genes did you identify in each domain? [10 points]
+
+***Archae: 175***
+
+***Bacteria: 123***
+
+***Eukaryota: 273***
+
 * Provide the results as three files (one for each domain) listing the
 OGs in sorted order. [15 points]
+
+***Filenames: cogs_archaea_o99.txt cogs_bacteria_o99.txt cogs_eukaryota_o99.txt***
 
 2. Which common bacterial genes occur almost exclusively as single-copy
 genes? Being more precise: Which OGs occur in at least 50% of all bacterial
