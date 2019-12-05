@@ -55,6 +55,10 @@ substantially deviate from this “default” archaeal gene set. Are
 there Archaea which lack 4 or more of these universal OGs? Which
 organism (scientific name) lacks most? [15 points]
 
+***Yes, 121.***
+
+***Filename: cogs_archaea_4.txt***
+
 4. Compile an overview of the functional categories of these 121 archaeal
 OGs.
 * Provide the result as a text file sorted by the number of the functional
