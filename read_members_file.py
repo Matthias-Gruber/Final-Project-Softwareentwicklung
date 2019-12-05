@@ -107,7 +107,6 @@ def parse_members_file(fin):
 def missing_taxids(cog, taxids):
     '''Determine which OGs are missing from which taxids'''
     #TODO
-    print("Taxids missing.")
 
         
 def output_seqids(filename, cogs):
