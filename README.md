@@ -64,4 +64,6 @@ OGs.
 * Provide the result as a text file sorted by the number of the functional
 categories. [25 points]
 
+***Filename: categories.txt***
+
 5. A clear and transparent project structure (folders: bin, data, doc, results) together with your notes and comments is favorable. [5 bonus points]
