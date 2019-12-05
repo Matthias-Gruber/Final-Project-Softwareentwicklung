@@ -68,7 +68,7 @@ def calc_stats(taxids, all_taxids):
     - uniqueness → 66% (OG is single-copy in 2 out of 3 taxids)
     - occurence_as_singlecopy → 50% (OG occurs as single-copy in 2 out of 4 taxids)
     '''
-    #TODO
+
     len_OG = len(list(set(taxids)))
     len_taxids = len(taxids)
     len_all = len(all_taxids)
@@ -148,8 +148,7 @@ def output_cogs():
 
     # Output taxids with missing cogs
     if args.missing:
-        print("Cogs missing.")
-        # TODO
+        output_seqids(args.seqids_out, "Arguments missing!")
                     
 
 if __name__ == '__main__':
