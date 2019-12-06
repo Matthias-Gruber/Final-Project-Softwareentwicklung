@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 import sys, gzip
-from collections import Counter
+from collections import Counter, defaultdict
+import pandas as pd
 
 func_categories_file = 'data/functional_categories.txt'
 cog_file = sys.argv[1]
@@ -13,6 +14,10 @@ cog2category = {}
 category2count = Counter()
 my_cogs = set()
 cog = []
+mycogs2code = defaultdict(int)
+cog2cat_count = defaultdict(int)
+overview = defaultdict(int)
+
 
 def skip_comments(file):
     for line in file:
@@ -52,8 +57,20 @@ with open("results/annotation.txt") as fin:
         cog2category[key] = val
         
 # Step 4: Count and output the categories for OGs of interest
-#TODO
-# Cogs die im Set mycogs gespeichert sind im Dictionary cog2category nachschauen. Die Buchstaben abzählen, Reihenfolge sortieren und mit dem Dictionary category2description Beschreibung heraussuchen und alles in overview.txt ausgeben.
+   
+for cog in mycogs:
+    if cog != "2157"and cog != "Missing COGs!\n":
+        mycogs2code[cog] = cog2category[cog]
+        
+for entry in mycogs2code:   
+    if len(mycogs2code[entry]) == 1:
+        cog2cat_count[mycogs2code[entry]] +=1
+    else:
+        for i in range(len(mycogs2code[entry])):
+            cog2cat_count[mycogs2code[entry][i]] +=1
 
-#with open("results/overview.txt", 'w') as fout:
- #   fout.write()
+for key in category2description:
+    overview[category2description[key]] = cog2cat_count[key]
+
+df = pd.DataFrame.from_dict(overview, orient='index')
+df.to_csv("results/overview.csv") 
