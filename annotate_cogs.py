@@ -41,6 +41,19 @@ i = input.read()
 func_annotations = i.decode("utf-8") 
 input.close()
 
-# Step 4: Count and output the categories for OGs of interest
-with open("results/categories.txt", 'w') as fout:
+with open("results/annotation.txt", 'w') as fout:
     fout.write(func_annotations)
+
+with open("results/annotation.txt") as fin:
+    for line in fin:
+        line = line.split("\t")
+        key = line[0:-1][1]
+        val = line[0:-1][2]
+        cog2category[key] = val
+        
+# Step 4: Count and output the categories for OGs of interest
+#TODO
+# Cogs die im Set mycogs gespeichert sind im Dictionary cog2category nachschauen. Die Buchstaben abzählen, Reihenfolge sortieren und mit dem Dictionary category2description Beschreibung heraussuchen und alles in overview.txt ausgeben.
+
+#with open("results/overview.txt", 'w') as fout:
+ #   fout.write()
