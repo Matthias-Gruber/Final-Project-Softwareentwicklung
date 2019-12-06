@@ -7,7 +7,8 @@ The following files were edited:
 * annotate_cogs.py
 * read_members_file.py
 
-
+The function  missing_taxids(cog, taxids) was not implemented.
+ 
 # Questions:
 
 1. Which genes are universally required for an organism to survive? Being
@@ -57,7 +58,7 @@ substantially deviate from this “default” archaeal gene set. Are
 there Archaea which lack 4 or more of these universal OGs? Which
 organism (scientific name) lacks most? [15 points]
 
-***Yes, 121.***
+***Yes, answer in File.***
 
 ***Filename: cogs_archaea_4.txt***
 
@@ -66,6 +67,6 @@ OGs.
 * Provide the result as a text file sorted by the number of the functional
 categories. [25 points]
 
-***Filename: categories.txt***
+***Filename: overview.txt***
 
 5. A clear and transparent project structure (folders: bin, data, doc, results) together with your notes and comments is favorable. [5 bonus points]
